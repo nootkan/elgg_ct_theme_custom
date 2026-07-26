@@ -1,1 +1,235 @@
+/* ----------------------------------------
+   Walled Garden Base Layout
+----------------------------------------- */
 
+.elgg-page-walled-garden {
+	margin: 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+/* Background image layer */
+.elgg-page-walled-garden-background {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 0;
+}
+
+/* Content wrapper */
+.elgg-page-walled-garden > .elgg-inner {
+	position: relative;
+	z-index: 1;
+	max-width: 52rem;
+	width: 100%;
+}
+
+/* White form box */
+.elgg-page-walled-garden .elgg-page-body {
+	background: #fff;
+	padding: 2rem 2.5rem 2.75rem; /* extra bottom space */
+	border-radius: 4px;
+	box-shadow: 0 6px 24px rgba(0,0,0,.25);
+	margin: 0 auto;
+}
+
+/* Headings */
+.elgg-heading-main {
+	margin-bottom: .75rem;
+}
+
+/* Green underline under form title */
+.elgg-layout-header::after {
+	content: "";
+	display: block;
+	height: 2px;
+	background: #6ee100;
+	margin: .75rem 0 1.5rem;
+}
+
+/* ----------------------------------------
+   Forms
+----------------------------------------- */
+
+.elgg-form-login,
+.elgg-form-account {
+	max-width: none;
+}
+
+/* Inputs */
+.elgg-input-text,
+.elgg-input-password {
+	border-radius: 3px;
+}
+
+/* ----------------------------------------
+   Lost password form: add space above Request button
+----------------------------------------- */
+
+.elgg-form-user-requestnewpassword .elgg-button-submit {
+	margin-top: 1rem;
+}
+
+/* ----------------------------------------
+   Footer / Button Layout
+----------------------------------------- */
+
+/* Footer wrapper */
+.elgg-form-footer .elgg-foot {
+	display: block; /* IMPORTANT: reset flex */
+}
+
+/* Checkbox row */
+.elgg-form-footer .elgg-level {
+	display: flex;
+	align-items: center;
+}
+
+/* Push submit button to the right */
+.elgg-form-footer .elgg-button-submit {
+	margin-left: auto;
+}
+
+/* ----------------------------------------
+   Buttons (LOGIN + REGISTER)
+----------------------------------------- */
+
+.elgg-button-submit,
+.elgg-button-action {
+	background: #6ee100;
+	border: none;
+	color: #fff;
+	padding: .6rem 1.6rem;
+	font-weight: 600;
+	border-radius: 3px;
+}
+
+.elgg-button-submit:hover,
+.elgg-button-action:hover {
+	background: #5ac700;
+}
+
+/* ----------------------------------------
+   Register / Lost password links
+----------------------------------------- */
+
+.elgg-menu-login {
+	clear: both;
+	margin-top: 1.5rem;
+	padding-top: 1rem;
+	border-top: 1px solid #e5e5e5;
+}
+
+.elgg-menu-login li {
+	display: list-item;
+	margin-left: 1rem;
+}
+
+/* --- BACKGROUND IMAGE --- */
+@ifset walled-garden-background-image {
+	.elgg-page-walled-garden-background {
+		background-image: url($(walled-garden-background-image));
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		background-attachment: fixed;
+	}
+}
+
+/* ----------------------------------------
+   Mobile Fixes
+----------------------------------------- */
+
+@media (max-width: 768px) {
+
+	.elgg-page-walled-garden {
+		align-items: flex-start;
+		padding-top: 2rem;
+	}
+
+	.elgg-page-walled-garden-background {
+		background-attachment: scroll;
+	}
+
+	.elgg-page-walled-garden .elgg-page-body {
+		padding: 1.5rem;
+		margin: 0 1rem;
+	}
+
+	.elgg-form-footer .elgg-level {
+		flex-wrap: wrap;
+	}
+
+	.elgg-button-submit {
+		margin-left: auto;
+		margin-top: 1rem;
+	}
+
+    .elgg-page-walled-garden .elgg-form-account {
+	margin-top: -20px;
+    }
+}
+
+/* ----------------------------------------
+   FIX: Remove stray bullets on walled garden
+----------------------------------------- */
+
+.elgg-page-walled-garden ul,
+.elgg-page-walled-garden li {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+/* ----------------------------------------
+   Walled Garden Footer Links (inline pipes)
+----------------------------------------- */
+
+/* CHANGE THIS COLOR to suit your background */
+.elgg-page-walled-garden {
+	--wg-footer-link-color: #ffffff;   /* example: white */
+	/* --wg-footer-link-color: #cfe9ff; */ /* soft blue */
+	/* --wg-footer-link-color: #6ee100; */ /* brand green */
+}
+
+.elgg-page-walled-garden .elgg-menu-walled-garden {
+	list-style: none;
+	margin: 1.5rem 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+.elgg-page-walled-garden .elgg-menu-walled-garden li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+/* Insert pipe separator */
+.elgg-page-walled-garden .elgg-menu-walled-garden li:not(:last-child)::after {
+	content: " | ";
+	margin: 0 .5rem;
+	color: var(--wg-footer-link-color);
+	opacity: .6;
+}
+
+/* Link styling */
+.elgg-page-walled-garden .elgg-menu-walled-garden a {
+	color: var(--wg-footer-link-color);
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.elgg-page-walled-garden .elgg-menu-walled-garden a:hover {
+	text-decoration: underline;
+}
+
+.elgg-page-walled-garden .elgg-menu-walled-garden a {
+	text-shadow: 0 1px 3px rgba(0,0,0,.65);
+	font-weight: 800;
+}
