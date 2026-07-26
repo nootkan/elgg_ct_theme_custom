@@ -1,0 +1,7 @@
+{
+  "name": "campingbuddy/ct_theme_custom",
+  "type": "elgg-plugin",
+  "license": "GPL-2.0-only",
+  "description": "Site-wide styling tweaks and optional header logo for Elgg 6",
+  "keywords": ["elgg", "theme", "css", "logo"]
+}
