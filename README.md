@@ -1,6 +1,6 @@
 # CT Theme Custom
 
-A theming and branding plugin for [Elgg](https://elgg.org) 6.x, built for the Camping Buddy community site. It provides site-wide styling, custom logo uploads, and admin-editable branding across validation emails, system emails, the registration page, and the walled garden login page.
+A theming and branding plugin for [Elgg](https://elgg.org) 6.x. It provides site-wide styling, custom logo uploads, and admin-editable branding across validation emails, system emails, the registration page, and the walled garden login page.
 
 ## Features
 
